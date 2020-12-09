@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand nav-link" href="{{ url_for ('home') }}">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for ('basketball') }}">Basketball</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for ('football') }}">Football</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container bg-dark d-flex h-100 align-items-center">
+    <h3 class = "mb-0 text-white">Determine If You Will Be Drafted Or Not</h3>
+</div>
+<form method=post>
+    <dl>
+        <div class="form-group">
+            <h3>Position</h3>
+            <label for="position">Enter the position you play (only one):</label><br>
+            {{form.position(placeholder="QB/WR/RB...")}}
+            <!-- <input type="text" name="position" id="pos" class="form-control" placeholder="ex. QB/WR/RB..."> -->
+        </div>
+        <div class="form-group">
+            <h3>Height</h3>
+            <label for="height">Enter your height (in):</label><br>
+            {{form.height(placeholder="76")}}
+            <!-- <input type="text" name="height" id="ht" class="form-control" placeholder="76"> -->
+        </div>
+        <div class="form-group">
+            <h3>Weight</h3>
+            <label for="weight">Enter your weight (lbs):</label><br>
+            {{form.weight(placeholder="225")}}
+            <!-- <input type="text" name="weight" id="wt" class="form-control" placeholder="225"> -->
+        </div>
+        <div class="form-group">
+            <h3>Bench</h3>
+            <label for="bench">Enter your bench(reps of 225lbs):</label><br>
+            {{form.bench(placeholder="20")}}
+            <!-- <input type="text" name="bench" id="bench" class="form-control" placeholder="20"> -->
+        </div>
+        <div class="form-group">
+            <h3>Vertical</h3>
+            <label for="vert">Enter your vertical (in):</label><br>
+            {{form.vert(placeholder="35.5")}}
+            <!-- <input type="text" name="vertical" id="vert" class="form-control" placeholder="35.5"> -->
+        </div>
+        <!-- <div class="form-group"> -->
+            <!-- <h3>Broad Jump</h3> -->
+            <!-- <label for="broad">Enter your broad jump (in):</label><br> -->
+            <!-- {{form.broad(placeholder="111")}} -->
+            <!-- <input type="text" name="vertical" id="vert" class="form-control" placeholder="111"> -->
+        <!-- </div> -->
+        <div class="form-group">
+            <h3>School (Optional)</h3>
+            <label for="school">Enter the school you play at (only one):</label><br>
+            {{form.school(placeholder="UCLA/Temple/Oklahoma...")}}
+            <!-- <input type="text" name="school" id="sch" class="form-control" placeholder="UCLA/Temple/Oklahoma..."> -->
+        </div>
+    </dl>
+    <p><input type="submit" value="submit"</p>
+    <p>*Results based on historic Combine data</p>
+ </form>
+{% endblock%}

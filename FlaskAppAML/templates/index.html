@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">NCAA ML Project</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Geographical Data</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#machine">Machine Learning</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead" style="background-image: url(https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/header.jpg);">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Predicting the Pros</h1>
+                <h2 class="text-white mx-auto mt-2 mb-5">Do you have what it takes to make it to the big leagues?</h2>
+                <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-white mb-4">Background</h2>
+                    <p class="text-white-50">
+                        We have taken draft data from the NBA and NFL, and college stats for basketball and football between the years of 2014 and 2019
+                        to create a predictive model by utilizing Machine Learning.
+                        <a href="https://expertsystem.com/machine-learning-definition/" target="_blank">Machine Learning</a>
+                        is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.
+                    </p>
+                </div>
+            </div>
+            <img class="img-fluid" src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/.ayton.png.icloud" alt="" />
+        </div>
+    </section>
+    <!-- Projects-->
+    <section class="projects-section bg-light" id="projects">
+        <div class="container">
+            <!-- Featured Project Row-->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6"><img class="img-fluid" src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/NCAAtrophy.jpg" alt="" /></div>
+                        <div class="col-lg-6">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                                        <h4 class="text-white">Geographical Data</h4>
+                                        <p class="mb-0 text-white-50">To visualize our data, we utilized the data sources to 
+                                            display various relationships in Tableau.</p>
+                                        <hr class="d-none d-lg-block mb-0 ml-0" />
+                                        <p class="mb-0 text-white-50">For more detail on each sport click on the buttons:</p>
+                                        <div class="btn-group">
+                                            <a class="btn text-white" href = "{{ url_for ('bballmap') }}">Basketball</a>
+                                            <a class="btn text-white" href = "{{ url_for ('fballmap') }}">Football</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    
+    <section class="machine-section" id="machine" style="background-image: url('https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/bg-signup.jpg');">
+        <div class="container">
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6"><img class="img-fluid" src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/cmcaff.jpg" alt="" /></div>
+                        <div class="col-lg-6 order-lg-first">
+                            <div class="bg-white text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="d-flex h-100">
+                                        <div class="project-text w-100 my-auto text-center text-lg-right">
+                                            <h4 class="text-black">Machine Learning</h4>
+                                            <p class="mb-0 text-black-50">Predict the Conference that will give you the best chance to make it to NBA</p>
+                                            <p class="mb-0 text-black-50">Or Predict your probability of getting drafted into NFL</p>
+                                            <hr class="d-none d-lg-block mb-0 mr-0" />
+                                            <div class="btn-group">
+                                                <a class="btn" href = "{{ url_for ('basketball') }}">Basketball</a>
+                                                <a class="btn" href = "{{ url_for ('football') }}">Football</a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="contact-section bg-black" id= "contact">
+        <div class="container">
+        <div class="mx-auto text-center">
+            <H1 class="mx-auto my-0 text-uppercase">CONTACT US</H1>
+        </div>
+            <div class="row">
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-basketball-ball text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Dominique Dunning</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">niquedunning5@gmail.com</div>
+                            <a href="https://www.linkedin.com/in/dominique-dunning-0b27037a/" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/Linkedin-Logo.png" alt="" /></a>
+                            <a href="https://github.com/niquedunning/" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/github.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-globe-americas text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Salvador Olivas</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">sal.olivas1989@gmail.com</div>
+                            <a href="https://www.linkedin.com/in/salvador-olivas-282242169" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/Linkedin-Logo.png" alt="" /></a>
+                            <a href="https://github.com/solivas89/" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/github.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-football-ball text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Dale Romero</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">dale.romero@gmail.com</div>
+                            <a href="https://www.linkedin.com/in/daleromero/" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/Linkedin-Logo.png" alt="" /></a>
+                            <a href="https://github.com/chippen-dale" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/github.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-line text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Nabeel Sheikh</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">nabi.sheikh23@gmail.com</div>
+                            <a href="https://www.linkedin.com/in/nabeel--sheikh/" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/Linkedin-Logo.png" alt="" /></a>
+                            <a href="https://github.com/nsheikh23" target="_blank"><img src="https://zappa-qwyfp6p71.s3-us-west-1.amazonaws.com/static/img/github.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
